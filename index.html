@@ -2,9 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clipboard Example</title>
+
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            margin: 0;
+        }
+
+        .dropdown img {
+            width: 20%;
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        .dropdown-item {
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-    TEST
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+        송금하기
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">
+            <img src="https://aplyplatform2.cdn1.cafe24.com/aqr/assets/imgs/appicons/icon_kakao.png" alt="KakaoBank">
+            카카오뱅크
+        </a>
+        <a class="dropdown-item" href="#">
+            <img src="https://aplyplatform2.cdn1.cafe24.com/aqr/assets/imgs/appicons/icon_toss.png" alt="Toss"> 토스뱅크
+        </a>
+        <a class="dropdown-item" href="#">
+            <img src="https://aplyplatform2.cdn1.cafe24.com/aqr/assets/imgs/appicons/icon_naver_pay.png"
+                 alt="Naver Pay"> 네이버페이
+        </a>
+        <a class="dropdown-item" href="#">
+            <img src="https://aplyplatform2.cdn1.cafe24.com/aqr/assets/imgs/appicons/icon_shinhansol.png"
+                 alt="Shinhan Sol"> 신한은행
+        </a>
+        <a class="dropdown-item" href="#">
+            <img src="https://aplyplatform2.cdn1.cafe24.com/aqr/assets/imgs/appicons/icon_woorione.png"
+                 alt="Woori WON Banking"> 우리은행
+        </a>
+        <a class="dropdown-item" href="#">
+            <img src="https://aplyplatform2.cdn1.cafe24.com/aqr/assets/imgs/appicons/icon_kbstart.png"
+                 alt="KB Star Banking"> KB국민은행
+        </a>
+        <a class="dropdown-item" href="#">
+            <img src="https://aplyplatform2.cdn1.cafe24.com/aqr/assets/imgs/appicons/icon_hanaoneq.png" alt="Hana Bank">
+            하나은행
+        </a>
+        <a class="dropdown-item" href="#">
+            <img src="https://aplyplatform2.cdn1.cafe24.com/aqr/assets/imgs/appicons/icon_nhcokbank.png" alt="NH Bank">
+            NH농협은행
+        </a>
+        <a class="dropdown-item" href="#">
+            <img src="https://aplyplatform2.cdn1.cafe24.com/aqr/assets/imgs/appicons/icon_ionebank_biz.png" alt="i-ONE뱅크"> 기업은행
+        </a>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        window.onload = function () {
+            const phoneNumber = "01076463634";
+            navigator.clipboard.writeText(phoneNumber).then(function () {
+                console.log('Phone number copied to clipboard');
+            }).catch(function (error) {
+                console.error('Error in copying text: ', error);
+            });
+        };
+    </script>
 </body>
 </html>
